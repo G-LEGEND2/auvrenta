@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  background: #faf7f5;
+}
+
+/* 6-image smooth crossfade hero — images are CLEAR, only text has a subtle shadow */
+.hero-slider {
+  position: relative;
+  overflow: hidden;
+  min-height: 520px;
+}
+
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out;
+}
+
+.hero-slide.active {
+  opacity: 1;
+}
+
+.hero-slide::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(26, 16, 16, 0.15),
+    rgba(122, 37, 48, 0.35)
+  );
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
