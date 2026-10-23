@@ -97,7 +97,8 @@ export default function Listing() {
             </div>
 
             <h2 className="font-bold text-xl mb-2">About this property</h2>
-            <p className="whitespace-pre-wrap text-gray-700 mb-8">{listing.description}</p>
+            <p className="whitespace-pre-wrap text-gray-700 mb-6">{listing.description}</p>
+            <p className="text-sm text-gray-500 mb-8 border-b pb-4">Listed on {new Date(listing.listedAt).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}</p>
 
             {/* Amenities */}
             {listing.amenities?.length > 0 && (
